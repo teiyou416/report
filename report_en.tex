@@ -1,0 +1,74 @@
+\documentclass[a4paper,12pt]{jsarticle}
+
+% Layout
+\usepackage[margin=25mm]{geometry}
+\usepackage{setspace}
+\onehalfspacing{}
+
+% Figures and tables
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{booktabs}
+
+% Links
+\usepackage[dvipdfmx]{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+
+% Report metadata
+\title{Report of Information System Analysis}
+\author{Student Number: \texttt{6930\mbox{-}38\mbox{-}5047}\\
+Name: Ye CHENG (程 ヨウ)}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This report describes the background and objective of the study.
+
+\section{Method}
+\subsection{Experimental Setup}
+Describe the experimental setup here.
+
+\subsection{Data Collection}
+Describe the data collection procedure here.
+
+\section{Results}
+\subsection{Figure Example}
+Figure~\ref{fig:example} shows an example result.
+
+\begin{figure}[htbp]
+  \centering
+  % \includegraphics[width=0.7\textwidth]{example.png}
+  \fbox{\rule{0pt}{40mm}\rule{0.7\textwidth}{0pt}}
+  \caption{Example result figure}\label{fig:example}
+\end{figure}
+
+\subsection{Table Example}
+Table~\ref{tab:example} summarizes the results.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Summary of results}\label{tab:example}
+  \begin{tabular}{lcc}
+    \toprule
+    Metric & Condition A & Condition B \\
+    \midrule
+    Accuracy & 0.91 & 0.88 \\
+    Recall & 0.89 & 0.85 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Discussion}
+Discuss key findings and limitations.
+
+\section{Conclusion}
+Summarize the conclusion briefly.
+
+\begin{thebibliography}{9}
+\bibitem{ref1}
+Author, \textit{Title}, Publisher, Year.
+\end{thebibliography}
+
+\end{document}

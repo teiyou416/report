@@ -1,0 +1,84 @@
+\documentclass[uplatex,a4paper,12pt]{jsarticle}
+
+% レイアウト
+\usepackage[margin=25mm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% 図表
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{booktabs}
+
+% リンク
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  citecolor=blue
+}
+
+% レポート情報
+\title{題目}
+\author{学籍番号: 12345678 \\
+氏名: 山田 太郎}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+%\tableofcontents
+%\newpage
+
+\section{はじめに}
+本レポートでは、研究の背景と目的を述べる。
+
+\section{方法}
+\subsection{実験条件}
+ここに実験条件を記述する。
+
+\subsection{データ収集}
+ここにデータ収集方法を記述する。
+
+\section{結果}
+\subsection{図の例}
+図\ref{fig:example}に結果の例を示す。
+
+\begin{figure}[htbp]
+  \centering
+  % \includegraphics[width=0.7\textwidth]{example.png}
+  \fbox{\rule{0pt}{40mm}\rule{0.7\textwidth}{0pt}}
+  \caption{結果図の例}
+  \label{fig:example}
+\end{figure}
+
+\subsection{表の例}
+表\ref{tab:example}に結果の要約を示す。
+
+\begin{table}[htbp]
+  \centering
+  \caption{結果の要約}
+  \label{tab:example}
+  \begin{tabular}{lcc}
+    \toprule
+    項目 & 条件A & 条件B \\
+    \midrule
+    精度 & 0.91 & 0.88 \\
+    再現率 & 0.89 & 0.85 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{考察}
+結果から分かる点と課題を述べる。
+
+\section{結論}
+本レポートの結論を簡潔に述べる。
+
+\begin{thebibliography}{9}
+\bibitem{ref1}
+著者名, 『文献タイトル』, 出版社, 年.
+\end{thebibliography}
+
+\end{document}
