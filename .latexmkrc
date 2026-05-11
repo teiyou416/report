@@ -10,5 +10,8 @@ $aux_dir = 'out';
 # Optional: quiet down latexmk output a bit
 $silent = 0;
 
+# Keep only final artifacts in out/ after a successful build.
+$success_cmd = q/find out -type f ! -name '*.pdf' ! -name '*.log' -delete/;
+
 # Clean common auxiliary extensions (keeps PDF by default)
 $clean_ext .= ' synctex.gz nav snm vrb bbl run.xml';
