@@ -8,6 +8,7 @@
 % Figures and tables
 \usepackage[dvipdfmx]{graphicx}
 \usepackage{booktabs}
+\usepackage[dvipdfmx]{xcolor}
 
 % Links
 \usepackage[dvipdfmx]{hyperref}
@@ -20,15 +21,26 @@
 
 % Report metadata
 \title{Report of Information System Analysis}
-\author{Student Number: \texttt{6930\mbox{-}38\mbox{-}5047}\\
-Name: Ye CHENG (程 ヨウ)}
+\newif\ifredactpersonalinfo
+
+\redactpersonalinfotrue
+%\redactpersonalinfofalse
+
+\newcommand{\studentnumber}{\texttt{6930\mbox{-}38\mbox{-}5047}}
+\newcommand{\studentname}{Ye CHENG (程 ヨウ)}
+\newcommand{\redact}[1]{\colorbox{black}{\rule{0pt}{1.2em}\rule{#1}{0pt}}}
+\newcommand{\maybeRedact}[2]{\ifredactpersonalinfo\redact{#1}\else #2\fi}
+\newcommand{\shownstudentnumber}{\maybeRedact{34mm}{\studentnumber}}
+\newcommand{\shownstudentname}{\maybeRedact{42mm}{\studentname}}
+\author{Student Number: \shownstudentnumber\\
+Name: \shownstudentname}
 \date{\today}
 
 \begin{document}
 
 \begin{flushright}
-Student Number: \texttt{6930\mbox{-}38\mbox{-}5047}\\
-Name: Ye CHENG (程 ヨウ)\quad
+Student Number: \shownstudentnumber\\
+Name: \shownstudentname\quad
 \today
 \end{flushright}
 

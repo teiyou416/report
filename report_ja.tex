@@ -8,6 +8,7 @@
 % 図表
 \usepackage[dvipdfmx]{graphicx}
 \usepackage{booktabs}
+\usepackage[dvipdfmx]{xcolor}
 
 % リンク
 \usepackage[dvipdfmx]{hyperref}
@@ -23,16 +24,29 @@
 \title{テーマ}
 %\author{学籍番号: 12345678 \\
 %氏名: 山田 太郎}
-\author{学籍番号: \texttt{6930\mbox{-}38\mbox{-}5047}\\
-名前：程 ヨウ}
+\newif\ifredactpersonalinfo
+
+%true for redact the id and name
+%delete the % for false 
+%\redactpersonalinfotrue
+\redactpersonalinfofalse
+
+\newcommand{\studentnumber}{\texttt{6930\mbox{-}38\mbox{-}5047}}
+\newcommand{\studentname}{程 ヨウ}
+\newcommand{\redact}[1]{\colorbox{black}{\rule{0pt}{1.2em}\rule{#1}{0pt}}}
+\newcommand{\maybeRedact}[2]{\ifredactpersonalinfo\redact{#1}\else #2\fi}
+\newcommand{\shownstudentnumber}{\maybeRedact{34mm}{\studentnumber}}
+\newcommand{\shownstudentname}{\maybeRedact{25mm}{\studentname}}
+\author{学籍番号: \shownstudentnumber\\
+名前：\shownstudentname}
 
 \date{\today}
 
 \begin{document}
 
 \begin{flushright}
-学籍番号: \texttt{6930\mbox{-}38\mbox{-}5047}\\
-名前：程 ヨウ\quad
+学籍番号: \shownstudentnumber\\
+名前：\shownstudentname\quad
 \today
 \end{flushright}
 
